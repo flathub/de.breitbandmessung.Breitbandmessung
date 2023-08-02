@@ -1,4 +1,3 @@
----
 app-id: de.breitbandmessung.Breitbandmessung
 runtime: org.freedesktop.Platform
 runtime-version: '22.08'
@@ -30,7 +29,8 @@ modules:
       - install -D lsb-release "${FLATPAK_DEST}/etc/lsb-release"
 
       # unpack debian package
-      - bsdtar -Oxf "Breitbandmessung-linux.deb" 'data.tar.*' | bsdtar --include 'usr/share/*' -xf -
+      - bsdtar -Oxf "Breitbandmessung-linux.deb" 'data.tar.*' | bsdtar --include 'usr/share/*'
+        -xf -
 
       # move shared files around
       - mv usr/share/* "${FLATPAK_DEST}/share/"
@@ -43,8 +43,10 @@ modules:
       - desktop-file-edit --set-key=Icon --set-value="$FLATPAK_ID" "${FLATPAK_DEST}/share/applications/$FLATPAK_ID.desktop"
 
       # rename icons and remove large sizes
-      - find "${FLATPAK_DEST}/share/icons" -name 'breitbandmessung.*' -path '*1024*' -delete
-      - find "${FLATPAK_DEST}/share/icons" -name 'breitbandmessung.*' -exec rename -v breitbandmessung "$FLATPAK_ID" {} \;
+      - find "${FLATPAK_DEST}/share/icons" -name 'breitbandmessung.*' -path '*1024*'
+        -delete
+      - find "${FLATPAK_DEST}/share/icons" -name 'breitbandmessung.*' -exec rename
+        -v breitbandmessung "$FLATPAK_ID" {} \;
     sources:
       - type: file
         path: apply_extra.bash
@@ -56,23 +58,22 @@ modules:
         path: de.breitbandmessung.Breitbandmessung.metainfo.xml
       - type: file
         dest-filename: Breitbandmessung-linux.deb
-        url: 'https://download.breitbandmessung.de/bbm/Breitbandmessung-3.3.0-linux.deb'
+        url: https://download.breitbandmessung.de/bbm/Breitbandmessung-3.4.0-linux.deb
         only-arches:
           - x86_64
-        size: 68009538
-        sha256: 'd7699b7719258def66b2746d364d5102d220dce0b26debffbd47abb03663da2e'
+        sha256: 97abb8d6811d5f0bb3feb6697761f6ed9cebb6a5d484a1f17ce51cd4ac7f5f09
         x-checker-data:
           type: html
           url: https://download.breitbandmessung.de/bbm/
-          pattern: "<a href=\"(Breitbandmessung-([\\d\\.]+\\d)-linux.deb)\">"
+          pattern: <a href="(Breitbandmessung-([\d\.]+\d)-linux.deb)">
       - type: extra-data
         filename: Breitbandmessung-linux.deb
-        url: 'https://download.breitbandmessung.de/bbm/Breitbandmessung-3.3.0-linux.deb'
+        url: https://download.breitbandmessung.de/bbm/Breitbandmessung-3.4.0-linux.deb
         only-arches:
           - x86_64
-        size: 68009538
-        sha256: 'd7699b7719258def66b2746d364d5102d220dce0b26debffbd47abb03663da2e'
+        size: 73821320
+        sha256: 97abb8d6811d5f0bb3feb6697761f6ed9cebb6a5d484a1f17ce51cd4ac7f5f09
         x-checker-data:
           type: html
           url: https://download.breitbandmessung.de/bbm/
-          pattern: "<a href=\"(Breitbandmessung-([\\d\\.]+\\d)-linux.deb)\">"
+          pattern: <a href="(Breitbandmessung-([\d\.]+\d)-linux.deb)">
