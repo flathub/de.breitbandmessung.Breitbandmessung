@@ -18,15 +18,19 @@
   <screenshots>
     <screenshot type="default">
       <caption>Main window</caption>
-      <image type="source">https://pixelfed.de/storage/m/_v2/487719958749985317/e942685c2-4a0fac/qudeuDzZKxbv/VlIByaOTM8LTGV6W1E8Gk0mta5AUzqKWgPe95yb5.png</image>
+      <image type="source">https://raw.githubusercontent.com/flathub/de.breitbandmessung.Breitbandmessung/master/screenshots/main_window.png</image>
     </screenshot>
     <screenshot>
       <caption>Measurment setup</caption>
-      <image type="source">https://pixelfed.de/storage/m/_v2/487719958749985317/e942685c2-4a0fac/9viMJlUwCHws/Sh8U9CB3IpHthJILSlvfLicdTpIPyxB9cUPzC082.png</image>
+      <image type="source">https://raw.githubusercontent.com/flathub/de.breitbandmessung.Breitbandmessung/master/screenshots/setup.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Measurment Process</caption>
+      <image type="source">https://raw.githubusercontent.com/flathub/de.breitbandmessung.Breitbandmessung/master/screenshots/measurement.png</image>
     </screenshot>
     <screenshot>
       <caption>Measurment results</caption>
-      <image type="source">https://pixelfed.de/storage/m/_v2/487719958749985317/e942685c2-4a0fac/5rwZCoG6407D/BsnkDIAbEb6EjJJFAuZ6PI52N586MxyiAJkgwPmt.png</image>
+      <image type="source">https://raw.githubusercontent.com/flathub/de.breitbandmessung.Breitbandmessung/master/screenshots/results.png</image>
     </screenshot>
   </screenshots>
 
