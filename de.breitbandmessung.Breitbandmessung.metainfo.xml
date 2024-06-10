@@ -3,11 +3,15 @@
   <id>de.breitbandmessung.Breitbandmessung</id>
 
   <name>Breitbandmessung</name>
-  <summary>Allows to measure internet speed.</summary>
+  <summary>Allows to measure internet speed</summary>
   <url type="homepage">https://breitbandmessung.de/</url>
 
   <metadata_license>MIT</metadata_license>
   <project_license>LicenseRef-proprietary=https://breitbandmessung.de/nutzungsbedingungen</project_license>
+
+  <developer id="de.breitbandmessung">
+    <name>zafaco GmbH</name>
+  </developer>
 
   <description>
     <p>
