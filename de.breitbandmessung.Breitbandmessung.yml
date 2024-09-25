@@ -8,6 +8,7 @@ tags:
   - proprietary
 command: breitbandmessung
 finish-args:
+  - --device=dri
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
