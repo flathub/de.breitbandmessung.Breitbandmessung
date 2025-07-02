@@ -75,21 +75,21 @@ modules:
         path: de.breitbandmessung.Breitbandmessung.metainfo.xml
       - type: file
         dest-filename: Breitbandmessung-linux.deb
-        url: https://download.breitbandmessung.de/bbm/Breitbandmessung-3.9.0-linux.deb
+        url: https://download.breitbandmessung.de/bbm/Breitbandmessung-3.9.1-linux.deb
         only-arches:
           - x86_64
-        sha256: 386fa866be541c88eb40ec4f98bb3f0f3189b9401de69032bcbb933af842fb6d
+        sha256: 04a7ef57da02ce6212fc1d71a0f98310bc93f0c3cb9c60a8676b1793668c8790
         x-checker-data:
           type: html
           url: https://download.breitbandmessung.de/bbm/
           pattern: <a href="(Breitbandmessung-([\d\.]+\d)-linux.deb)">
       - type: extra-data
         filename: Breitbandmessung-linux.deb
-        url: https://download.breitbandmessung.de/bbm/Breitbandmessung-3.9.0-linux.deb
+        url: https://download.breitbandmessung.de/bbm/Breitbandmessung-3.9.1-linux.deb
         only-arches:
           - x86_64
-        size: 100851534
-        sha256: 386fa866be541c88eb40ec4f98bb3f0f3189b9401de69032bcbb933af842fb6d
+        size: 100866180
+        sha256: 04a7ef57da02ce6212fc1d71a0f98310bc93f0c3cb9c60a8676b1793668c8790
         x-checker-data:
           type: html
           url: https://download.breitbandmessung.de/bbm/
