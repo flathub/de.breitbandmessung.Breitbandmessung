@@ -1,9 +1,9 @@
 app-id: de.breitbandmessung.Breitbandmessung
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '25.08'
+base-version: '26.08'
 tags:
   - proprietary
 command: breitbandmessung
@@ -46,7 +46,7 @@ modules:
       - install -D lsb-release "${FLATPAK_DEST}/etc/lsb-release"
 
       # unpack debian package
-      - bsdtar -Oxf "Breitbandmessung-linux.deb" 'data.tar.*' | bsdtar --include 'usr/share/*'
+      - bsdtar -Oxf "Festnetz-Check-linux.deb" 'data.tar.*' | bsdtar --include 'usr/share/*'
         -xf -
 
       # move shared files around
@@ -58,6 +58,8 @@ modules:
       - mv "${FLATPAK_DEST}/share/applications/breitbandmessung.desktop" "${FLATPAK_DEST}/share/applications/$FLATPAK_ID.desktop"
       - desktop-file-edit --set-key=Exec --set-value=breitbandmessung "${FLATPAK_DEST}/share/applications/$FLATPAK_ID.desktop"
       - desktop-file-edit --set-key=Icon --set-value="$FLATPAK_ID" "${FLATPAK_DEST}/share/applications/$FLATPAK_ID.desktop"
+      - desktop-file-edit --set-key=Name --set-value="Breitbandmessung" "${FLATPAK_DEST}/share/applications/$FLATPAK_ID.desktop"
+      - desktop-file-edit --set-key=StartupWMClass --set-value="Breitbandmessung" "${FLATPAK_DEST}/share/applications/$FLATPAK_ID.desktop"
 
       # rename icons and remove large sizes
       - find "${FLATPAK_DEST}/share/icons" -name 'breitbandmessung.*' -path '*1024*'
@@ -74,23 +76,25 @@ modules:
       - type: file
         path: de.breitbandmessung.Breitbandmessung.metainfo.xml
       - type: file
-        dest-filename: Breitbandmessung-linux.deb
-        url: https://download.breitbandmessung.de/bbm/Breitbandmessung-3.12.1-linux.deb
+        dest-filename: Festnetz-Check-linux.deb
+        url: https://download.breitbandmessung.de/bbm/Festnetz-Check-3.13.0-linux.deb
         only-arches:
           - x86_64
-        sha256: b948331a4e8df0fcbdd6fbace588770e62b4c61e7e279c6a0f79ef581de080f1
+        sha256: 551a5ca1648d490a9e562bdb1c076d153a49244727f831e60347482d5886f883
         x-checker-data:
           type: html
-          url: https://download.breitbandmessung.de/bbm/
-          pattern: <a href="(Breitbandmessung-([\d\.]+\d)-linux.deb)">
+          url: https://breitbandmessung.de/festnetz
+          version-pattern: "Festnetz-Check Version ([\\d\\.]+\\d)"
+          url-template: https://download.breitbandmessung.de/bbm/Festnetz-Check-$version-linux.deb
       - type: extra-data
-        filename: Breitbandmessung-linux.deb
-        url: https://download.breitbandmessung.de/bbm/Breitbandmessung-3.12.1-linux.deb
+        filename: Festnetz-Check-linux.deb
+        url: https://download.breitbandmessung.de/bbm/Festnetz-Check-3.13.0-linux.deb
         only-arches:
           - x86_64
-        size: 119624200
-        sha256: b948331a4e8df0fcbdd6fbace588770e62b4c61e7e279c6a0f79ef581de080f1
+        size: 119629788
+        sha256: 551a5ca1648d490a9e562bdb1c076d153a49244727f831e60347482d5886f883
         x-checker-data:
           type: html
-          url: https://download.breitbandmessung.de/bbm/
-          pattern: <a href="(Breitbandmessung-([\d\.]+\d)-linux.deb)">
+          url: https://breitbandmessung.de/festnetz
+          version-pattern: "Festnetz-Check Version ([\\d\\.]+\\d)"
+          url-template: https://download.breitbandmessung.de/bbm/Festnetz-Check-$version-linux.deb
